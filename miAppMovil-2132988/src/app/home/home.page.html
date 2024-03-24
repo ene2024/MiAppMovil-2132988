@@ -14,10 +14,11 @@
   </ion-header>
 
   <div id="container">
-    <p *ngIf="verdadero">Si puedes ver este mensaje, <strong>verdadero</strong> es <strong>true</strong></p>
-    <p [ngClass]="{'rojo':verdadero, 'azul':verdadero==false}">Si verdadero es <strong>verdadero</strong>, 
-      este texto será <strong>rojo</strong>, pero si esto es falso, entonces será <strong>azul</strong></p>
-    
-    <ion-button (click)="hazmeClic()">Hazme clic!</ion-button>
+    <ion-button (click)="hazmeClick()">Hazme click!</ion-button>
   </div>
+
+  <div id="contenedor">
+    <img [src]="imgUrl">
+  </div>
+
 </ion-content>

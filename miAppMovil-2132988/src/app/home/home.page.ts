@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton} from '@ionic/angular/standalone';
 
 import { CommonModule } from '@angular/common';
@@ -10,16 +10,14 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, CommonModule],
 })
-export class HomePage implements OnInit{
+export class HomePage {
   constructor() {}
-
-  ngOnInit() {}
-
-  verdadero: boolean = true;
 
   titulo: string='Mi nueva página!';
 
-  hazmeClic(): void{
-    alert("Hiciste clic!");
+  hazmeClick(): void{
+    alert("Hiciste click!");
   }
+
+  imgUrl: string = 'https://i0.wp.com/codigoespagueti.com/wp-content/uploads/2021/03/Nueva-serie-de-television-de-Patricio-Estrella.jpg';
 }

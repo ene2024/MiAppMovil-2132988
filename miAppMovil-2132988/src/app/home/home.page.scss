@@ -1,14 +1,6 @@
 #container {
   text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-
-  display:flex;
-  flex-direction: column;
-  align-items: center;
+  margin-top: 20px;
 }
 
 #container strong {
@@ -27,10 +19,6 @@
   text-decoration: none;
 }
 
-.rojo{
-  color: red;
-}
-
-.azul{
-  color: blue;
+#contenedor {
+  margin: 30px;
 }
