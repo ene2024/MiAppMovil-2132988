@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{ titulo }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Llevar a Bruno al veterinario</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p class="txt">Fecha</p>
+      <p class="fecha">05/24</p>
+    </ion-card-content>
+
+    <ion-button class="botonVerMas" expand="block" fill="clear">+ Ver más detalles</ion-button>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Recordar tarea de Aplicaciones Móviles</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p class="txt">Fecha</p>
+      <p class="fecha">05/24</p>
+    </ion-card-content>
+
+    <ion-button class="botonVerMas" expand="block" fill="clear">+ Ver más detalles</ion-button>
+  </ion-card>
+
+  <ion-button class="botonAdd" color="secondary" slot="fixed" vertical="bottom" horizontal="end">+</ion-button>
+  
+</ion-content>
