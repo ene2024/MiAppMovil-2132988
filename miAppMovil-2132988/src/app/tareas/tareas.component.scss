@@ -19,8 +19,13 @@ ion-content {
 .botonAdd {
     border-radius: 50%;
     color: #000000;
+    position: fixed;
+    bottom: 20px;
     right: 20px;
-    bottom: 80px;
+}
+
+.fechaTarjeta {
+    display: flex;
 }
 
 .txt {

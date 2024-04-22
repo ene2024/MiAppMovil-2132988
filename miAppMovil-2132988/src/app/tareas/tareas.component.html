@@ -6,33 +6,32 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Llevar a Bruno al veterinario</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      <p class="txt">Fecha</p>
-      <p class="fecha">05/24</p>
-    </ion-card-content>
+<ion-content [fullscreen]="true">  
+  <div>
+    <ion-card *ngFor="let tarea of tareas">
+      <ion-card-header>
+        <ion-card-subtitle>{{tarea.nombre}}</ion-card-subtitle>
+      </ion-card-header>  
+      
+      <ion-card-content>
+        <div class="fechaTarjeta">
+          <p class="txt">Fecha:</p>
+          <p class="fecha">{{tarea.mes}} {{tarea.anio}}</p>
+        </div>
+      </ion-card-content>
 
-    <ion-button class="botonVerMas" expand="block" fill="clear">+ Ver más detalles</ion-button>
-  </ion-card>
+      <ion-button class="botonVerMas" expand="block" fill="clear">+ Ver más detalles</ion-button>
+    </ion-card>
+  </div>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Recordar tarea de Aplicaciones Móviles</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      <p class="txt">Fecha</p>
-      <p class="fecha">05/24</p>
-    </ion-card-content>
+  <ion-fab>
+    <ion-fab-button (click)="toggleMostrarAgregarTarea()" class="botonAdd" color="secondary">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
-    <ion-button class="botonVerMas" expand="block" fill="clear">+ Ver más detalles</ion-button>
-  </ion-card>
-
-  <ion-button class="botonAdd" color="secondary" slot="fixed" vertical="bottom" horizontal="end">+</ion-button>
+  <app-agregar-tarea 
+  *ngIf="mostrarAgregarTarea"
+  (tareaAgregada)="agregarNuevaTarea($event)"></app-agregar-tarea>
   
 </ion-content>
