@@ -1,19 +1,29 @@
 ion-card-title {
-    --color: #e600ac;
+    color: #e600ac;
   }
   
 ion-card-subtitle {
-    --color: #e600ac;
+    color: #e600ac;
+    width: 73%;
 }
 
 ion-content {
     --background: #e600ac;
 }
 
-.botonVerMas {
+ion-card-header {
+    display: flex;
+    justify-content: center;
+}
+
+.verMas {
+    display: flex;
+    justify-content: center;
     color: #e600ac;
-    background: #dfdfdf;
-    border-radius: 5px;
+}
+
+.descripcion {
+    padding: 5%;
 }
 
 .botonAdd {
@@ -36,3 +46,9 @@ ion-content {
     color: #e600ac;
 }
 
+.eliminar {
+    position: fixed;
+    padding-left: 65%;
+    color: red;
+    font-size: 15px;
+}

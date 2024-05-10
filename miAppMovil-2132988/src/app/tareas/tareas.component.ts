@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { AgregarTareaComponent } from '../agregar-tarea/agregar-tarea.component';
 
-import { Tarea } from '../tarea';
+import { Tarea } from '../Tarea';
+import { TareasService } from '../tareas.service';
 
 @Component({
   selector: 'app-tareas',
@@ -17,15 +18,23 @@ export class TareasComponent {
   titulo: string='Mi App de Tareas';
 
   tareas: Tarea[] = [];
-  mostrarAgregarTarea: boolean = false;
 
-  agregarNuevaTarea(tarea: Tarea){
-    this.tareas.push(tarea);
-    this.mostrarAgregarTarea = false;
+  isModalOpen = false;
+
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+    isOpen = false;
   }
 
-  toggleMostrarAgregarTarea() {
-    this.mostrarAgregarTarea = !this.mostrarAgregarTarea;
+  constructor (private TareasService : TareasService) { }
+
+  ngOnInit() {
+    this.tareas = this.TareasService.obtenerTareas();
+  }
+  
+  eliminarTarea(index: number) {
+    console.log("Index a eliminar:", index);
+    this.TareasService.eliminarTarea(index);
   }
 
 }

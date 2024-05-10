@@ -3,7 +3,8 @@ import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 
 import { FormsModule } from '@angular/forms';
-import { Tarea } from '../tarea';
+import { Tarea } from '../Tarea';
+import { TareasService } from '../tareas.service';
 
 @Component({
   selector: 'app-agregar-tarea',
@@ -15,15 +16,12 @@ import { Tarea } from '../tarea';
 export class AgregarTareaComponent {
 
   nuevaTarea: Tarea = {nombre:'', mes:'', anio:0, descripcion:''};
-  
-  @Output() tareaAgregada = new EventEmitter<Tarea>();
 
-  agregarTarea(){
-    console.log('Nueva tarea:', this.nuevaTarea);
-    
-    //Emitir evento con la nueva tarea
-    this.tareaAgregada.emit(this.nuevaTarea);
-    //Limpiar formulario
-    this.nuevaTarea = {nombre:'', mes:'', anio:0, descripcion:''};
+  constructor (private TareasService : TareasService) { }
+  
+  agregarTarea() {
+    this.TareasService.agregarTarea(this.nuevaTarea);
+    this.nuevaTarea = { nombre: '', descripcion: '', mes: '', anio: 0 };
   }
+
 }

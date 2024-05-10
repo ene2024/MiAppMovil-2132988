@@ -8,9 +8,10 @@
 
 <ion-content [fullscreen]="true">  
   <div>
-    <ion-card *ngFor="let tarea of tareas">
+    <ion-card *ngFor="let tarea of tareas; let i = index">
       <ion-card-header>
         <ion-card-subtitle>{{tarea.nombre}}</ion-card-subtitle>
+        <ion-button (click)="eliminarTarea(i)" fill="clear" class="eliminar">Eliminar</ion-button>
       </ion-card-header>  
       
       <ion-card-content>
@@ -20,18 +21,35 @@
         </div>
       </ion-card-content>
 
-      <ion-button class="botonVerMas" expand="block" fill="clear">+ Ver más detalles</ion-button>
+      <ion-accordion-group>
+        <ion-accordion value="detalles">
+          <ion-item slot="header" color="light">
+            <ion-label class="verMas">+ Ver más detalles</ion-label>
+          </ion-item>
+          <div class="descripcion" slot="content">{{tarea.descripcion}}</div>
+        </ion-accordion>
+      </ion-accordion-group>
     </ion-card>
+
   </div>
 
   <ion-fab>
-    <ion-fab-button (click)="toggleMostrarAgregarTarea()" class="botonAdd" color="secondary">
-      <ion-icon name="add-outline"></ion-icon>
-    </ion-fab-button>
+    <ion-fab-button (click)="setOpen(true)" class="botonAdd" color="secondary">+</ion-fab-button>
   </ion-fab>
-
-  <app-agregar-tarea 
-  *ngIf="mostrarAgregarTarea"
-  (tareaAgregada)="agregarNuevaTarea($event)"></app-agregar-tarea>
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Agregar Tarea</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <app-agregar-tarea></app-agregar-tarea>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
   
 </ion-content>

@@ -1,12 +1,4 @@
 <div class="formularioVentana">
-  <ion-header [translucent]="true">
-    <ion-toolbar>
-      <ion-title>
-        Agregar tarea
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <ion-content [fullscreen]="true">
     <div class="nombre">
       <ion-label>Nombre de la tarea:</ion-label>
@@ -44,7 +36,7 @@
     
     <div class="descripcion">
       <ion-label>Descripción:</ion-label> 
-      <ion-textarea fill="outline" rows="5"
+      <ion-textarea fill="outline" rows="3"
       [(ngModel)]="nuevaTarea.descripcion"></ion-textarea>
     </div>
     
@@ -52,4 +44,5 @@
       <ion-button (click)="agregarTarea()" color="secondary" expand="block">Agregar</ion-button>
     </div>
   </ion-content>
+
 </div>
