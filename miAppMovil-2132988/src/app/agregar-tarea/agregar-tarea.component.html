@@ -1,48 +1,59 @@
-<div class="formularioVentana">
-  <ion-content [fullscreen]="true">
-    <div class="nombre">
-      <ion-label>Nombre de la tarea:</ion-label>
-      <ion-textarea fill="outline"
-      [(ngModel)]="nuevaTarea.nombre"></ion-textarea>
-    </div>
-  
-    <div class="fecha">
-      <ion-label>Fecha estimada en que se completará:</ion-label>
-      
-      <div class="selector">
-        <ion-select class="selectorMes" label="Mes" label-placement="floating" fill="outline"
-        [(ngModel)]="nuevaTarea.mes">
-          <ion-select-option value="Enero">Enero</ion-select-option>
-          <ion-select-option value="Febrero">Febrero</ion-select-option>
-          <ion-select-option value="Marzo">Marzo</ion-select-option>
-          <ion-select-option value="Abril">Abril</ion-select-option>
-          <ion-select-option value="Mayo">Mayo</ion-select-option>
-          <ion-select-option value="Junio">Junio</ion-select-option>
-          <ion-select-option value="Julio">Julio</ion-select-option>
-          <ion-select-option value="Agosto">Agosto</ion-select-option>
-          <ion-select-option value="Septiembre">Septiembre</ion-select-option>
-          <ion-select-option value="Octubre">Octubre</ion-select-option>
-          <ion-select-option value="Noviembre">Noviembre</ion-select-option>
-          <ion-select-option value="Diciembre">Diciembre</ion-select-option>
-        </ion-select>
-        <ion-select label="Año" label-placement="floating" fill="outline"
-        [(ngModel)]="nuevaTarea.anio">
-          <ion-select-option value="2024">2024</ion-select-option>
-          <ion-select-option value="2025">2025</ion-select-option>
-          <ion-select-option value="2026">2026</ion-select-option>
-        </ion-select> 
-      </div>
-    </div>
-    
-    <div class="descripcion">
-      <ion-label>Descripción:</ion-label> 
-      <ion-textarea fill="outline" rows="3"
-      [(ngModel)]="nuevaTarea.descripcion"></ion-textarea>
-    </div>
-    
-    <div class="botonAgregar">
-      <ion-button (click)="agregarTarea()" color="secondary" expand="block">Agregar</ion-button>
-    </div>
-  </ion-content>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Agregar Tarea
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
-</div>
+<ion-content [fullscreen]="true">
+
+  <div class="formularioVentana">
+    <ion-content [fullscreen]="true">
+      <div class="nombre">
+        <ion-label>Nombre de la tarea:</ion-label>
+        <ion-textarea fill="outline"
+        [(ngModel)]="nuevaTarea.nombre"></ion-textarea>
+      </div>
+    
+      <div class="fecha">
+        <ion-label>Fecha estimada en que se completará:</ion-label>
+        
+        <div class="selector">
+          <ion-select class="selectorMes" label="Mes" label-placement="floating" fill="outline"
+          [(ngModel)]="nuevaTarea.mes">
+            <ion-select-option value="Enero">Enero</ion-select-option>
+            <ion-select-option value="Febrero">Febrero</ion-select-option>
+            <ion-select-option value="Marzo">Marzo</ion-select-option>
+            <ion-select-option value="Abril">Abril</ion-select-option>
+            <ion-select-option value="Mayo">Mayo</ion-select-option>
+            <ion-select-option value="Junio">Junio</ion-select-option>
+            <ion-select-option value="Julio">Julio</ion-select-option>
+            <ion-select-option value="Agosto">Agosto</ion-select-option>
+            <ion-select-option value="Septiembre">Septiembre</ion-select-option>
+            <ion-select-option value="Octubre">Octubre</ion-select-option>
+            <ion-select-option value="Noviembre">Noviembre</ion-select-option>
+            <ion-select-option value="Diciembre">Diciembre</ion-select-option>
+          </ion-select>
+          <ion-select label="Año" label-placement="floating" fill="outline"
+          [(ngModel)]="nuevaTarea.anio">
+            <ion-select-option value="2024">2024</ion-select-option>
+            <ion-select-option value="2025">2025</ion-select-option>
+            <ion-select-option value="2026">2026</ion-select-option>
+          </ion-select> 
+        </div>
+      </div>
+      
+      <div class="descripcion">
+        <ion-label>Descripción:</ion-label> 
+        <ion-textarea fill="outline" rows="3"
+        [(ngModel)]="nuevaTarea.descripcion"></ion-textarea>
+      </div>
+      
+      <div class="botonAgregar">
+        <ion-button [routerLink]="['/tareas']" (click)="agregarTarea()" color="secondary" expand="block">Agregar</ion-button>
+      </div>
+    </ion-content>
+
+  </div>
+</ion-content>

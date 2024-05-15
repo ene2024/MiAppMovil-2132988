@@ -5,13 +5,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tarea } from '../Tarea';
 import { TareasService } from '../tareas.service';
+import { RouterModule } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-agregar-tarea',
   templateUrl: './agregar-tarea.component.html',
   styleUrls: ['./agregar-tarea.component.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule],
+  imports: [IonicModule, CommonModule, FormsModule, RouterModule, RouterLink],
 })
 export class AgregarTareaComponent {
 

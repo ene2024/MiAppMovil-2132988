@@ -16,9 +16,12 @@ ion-card-header {
     justify-content: center;
 }
 
+ion-card{
+    background-color: white;
+}
+
 .verMas {
-    display: flex;
-    justify-content: center;
+    --background: #d3dade;
     color: #e600ac;
 }
 

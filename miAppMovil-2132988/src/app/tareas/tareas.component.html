@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      {{ titulo }}
+      Mi App de Tareas
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -21,35 +21,13 @@
         </div>
       </ion-card-content>
 
-      <ion-accordion-group>
-        <ion-accordion value="detalles">
-          <ion-item slot="header" color="light">
-            <ion-label class="verMas">+ Ver más detalles</ion-label>
-          </ion-item>
-          <div class="descripcion" slot="content">{{tarea.descripcion}}</div>
-        </ion-accordion>
-      </ion-accordion-group>
+      <ion-button [routerLink]="['/vista-detalle']" expand="full" class="verMas">+ Ver más detalles</ion-button>
     </ion-card>
 
   </div>
 
   <ion-fab>
-    <ion-fab-button (click)="setOpen(true)" class="botonAdd" color="secondary">+</ion-fab-button>
+    <ion-fab-button [routerLink]="['/agregar-tarea']" class="botonAdd" color="secondary">+</ion-fab-button>
   </ion-fab>
-  <ion-modal [isOpen]="isModalOpen">
-    <ng-template>
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Agregar Tarea</ion-title>
-          <ion-buttons slot="end">
-            <ion-button (click)="setOpen(false)">Close</ion-button>
-          </ion-buttons>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content>
-        <app-agregar-tarea></app-agregar-tarea>
-      </ion-content>
-    </ng-template>
-  </ion-modal>
   
 </ion-content>

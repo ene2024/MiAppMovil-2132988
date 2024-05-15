@@ -39,3 +39,19 @@
     height: 100%;
     padding-top: 10%;
 }
+
+
+ion-header{
+    background-color: #e600ac;
+}
+
+ion-content {
+    --background: white;
+    --color: black;
+}
+
+ion-textarea {
+    border-style: ridge;
+    border-color: #50c8ff;
+    border-width: 2px;
+}
